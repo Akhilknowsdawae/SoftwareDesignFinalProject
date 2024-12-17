@@ -398,7 +398,8 @@ FodyWeavers.xsd
 
 #openframeworks
 *.dll
-*.rc
+icon.rc
 *.sln
 *.vcxproj
 *.filters
+*.exe
