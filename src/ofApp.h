@@ -1,6 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
+#include "TextBox.h"
+#include "Scene.h"
+#include "BgImg.h"
+#include "TalkSprite.h"
+
 
 class ofApp : public ofBaseApp{
 
@@ -21,4 +26,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+		Scene Scene1;
 };

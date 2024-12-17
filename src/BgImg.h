@@ -4,7 +4,7 @@
 class BgImg
 {
 public:
-	ofImage Background;
+	ofImage BackgroundSprite;
 
 
 };
