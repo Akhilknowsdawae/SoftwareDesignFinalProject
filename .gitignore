@@ -395,3 +395,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#openframeworks
+.dll
+.rc
+.sln
+.vcxproj
+.filters
