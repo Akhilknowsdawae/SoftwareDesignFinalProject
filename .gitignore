@@ -397,8 +397,8 @@ FodyWeavers.xsd
 *.sln.iml
 
 #openframeworks
-.dll
-.rc
-.sln
-.vcxproj
-.filters
+*.dll
+*.rc
+*.sln
+*.vcxproj
+*.filters
