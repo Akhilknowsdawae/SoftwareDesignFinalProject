@@ -1,11 +1,13 @@
 #include "ofApp.h"
+#include "Constants.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	Scene1.Background.BackgroundSprite.load("BackgroundTemplate.png");
-	Scene1.Dialogue.Box.load("TextBoxTemplate.png");
+	Scene1.Background.BackgroundSprite.load(Constants::BACKGROUND);
+	Scene1.Dialogue.Box.load(Constants::TEXTBOX);
 	Scene1.SpriteLeft.Sprite.load("TalkSpriteTemplate.png");
 	Scene1.SpriteRight.Sprite.load("TalkSpriteTemplate.png");
+	Scene1.CentrePoint.load("CENTREPOINT.png");
 	ofSetRectMode(OF_RECTMODE_CENTER);
 }
 
@@ -16,9 +18,21 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	background
+	ofBackground(0);
+	ofPushMatrix;
+	Scene1.CentrePoint.draw(ofGetWindowWidth()/2, ofGetWindowHeight()/2);
+	ofPopMatrix;
 	ofPushMatrix;
 	Scene1.Background.BackgroundSprite.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
+	ofPopMatrix;
+	ofPushMatrix;
+	Scene1.SpriteLeft.Sprite.draw((ofGetWindowWidth() / 2 )+ Constants::SCLEFT, ofGetWindowHeight() / 2);
+	ofPopMatrix;
+	ofPushMatrix;
+	Scene1.SpriteRight.Sprite.draw((ofGetWindowWidth() / 2) + Constants::SCRIGHT, ofGetWindowHeight() / 2);
+	ofPopMatrix;
+	ofPushMatrix;
+	Scene1.Dialogue.Box.draw(ofGetWindowWidth() / 2, (ofGetWindowHeight() / 2)+ Constants::TXTBOX);
 	ofPopMatrix;
 }
 

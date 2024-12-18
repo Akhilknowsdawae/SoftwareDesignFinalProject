@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "BgImg.h"
 #include "TalkSprite.h"
+#include "Constants.h"
 
 
 class ofApp : public ofBaseApp{
@@ -27,4 +28,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Scene Scene1;
+
 };

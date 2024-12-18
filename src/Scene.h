@@ -13,6 +13,7 @@ public:
 	TalkSprite SpriteLeft;
 	TalkSprite SpriteRight;
 	TextBox Dialogue;
+	ofImage CentrePoint;
 
 	float ScreenCentreX = 480;
 	float ScreenCentreY = 320;
