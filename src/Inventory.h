@@ -21,8 +21,8 @@ class Inventory {
 public:
 	void addItem(const shared_ptr<Item>& item);
 	bool removeItem(const string& itemName);
-	void displayInventory();
-	bool hasItem(const string& itemName);
+	void displayInventory() const;
+	bool hasItem(const string& itemName) const;
 
 private:
 	vector<shared_ptr<Item>> items;
