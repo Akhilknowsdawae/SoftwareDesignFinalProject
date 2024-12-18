@@ -1,5 +1,4 @@
 #pragma once
-#include "ofMain.h"
 #include "TalkSprite.h"
 #include "Inventory.h"
 
