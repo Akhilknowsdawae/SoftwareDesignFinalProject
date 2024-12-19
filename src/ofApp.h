@@ -6,7 +6,7 @@
 #include "BgImg.h"
 #include "TalkSprite.h"
 #include "Constants.h"
-#include "Sound.h"
+#include "SoundPlay.h"
 
 class ofApp : public ofBaseApp{
 

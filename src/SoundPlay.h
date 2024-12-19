@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-class Sound
+class SoundPlay
 {
 	public:
 		ofSoundPlayer   BGTrack;
@@ -13,6 +13,7 @@ class Sound
 		float TxtVolume = 100;
 		float SfxVolume = 100;
 
-		void playSound(ofSoundPlayer sound, float volume);
+		//void playSound(ofSoundPlayer sound, float volume);
+
 };
 
