@@ -8,6 +8,7 @@
 #include "Constants.h"
 #include "SoundPlay.h"
 #include "Render.h"
+#include "DialogueManager.h"
 
 class ofApp : public ofBaseApp{
 
@@ -30,4 +31,5 @@ class ofApp : public ofBaseApp{
 		
 		Scene Scene1;
 		Render Renderer;
+		DialogueManager dialogueManager;
 };

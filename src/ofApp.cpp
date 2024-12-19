@@ -24,7 +24,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	Scene1.update();
+	
 }
 
 //--------------------------------------------------------------
@@ -46,8 +46,6 @@ void ofApp::draw(){
 	ofPushMatrix;
 	Renderer.drawSprite(Scene1.Dialogue.Box, true, 4);
 	ofPopMatrix;
-
-	Scene1.draw_text();
 }
 
 //--------------------------------------------------------------
