@@ -7,6 +7,7 @@
 #include "TalkSprite.h"
 #include "Constants.h"
 #include "SoundPlay.h"
+#include "Render.h"
 
 class ofApp : public ofBaseApp{
 
@@ -28,4 +29,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Scene Scene1;
+		Render Renderer;
 };
