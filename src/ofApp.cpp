@@ -35,16 +35,16 @@ void ofApp::draw(){
 	Scene1.CentrePoint.draw(ofGetWindowWidth()/2, ofGetWindowHeight()/2);
 	ofPopMatrix;
 	ofPushMatrix;
-	Scene1.Background.BackgroundSprite.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
+	Scene1.Background.drawSprite(true);
 	ofPopMatrix;
 	ofPushMatrix;
-	Scene1.SpriteLeft.Sprite.draw((ofGetWindowWidth() / 2 )+ Constants::SCLEFT, ofGetWindowHeight() / 2);
+	Scene1.SpriteLeft.drawSprite(true, 1);
 	ofPopMatrix;
 	ofPushMatrix;
-	Scene1.SpriteRight.Sprite.draw((ofGetWindowWidth() / 2) + Constants::SCRIGHT, ofGetWindowHeight() / 2);
+	Scene1.SpriteRight.drawSprite(true, 3);
 	ofPopMatrix;
 	ofPushMatrix;
-	Scene1.Dialogue.Box.draw(ofGetWindowWidth() / 2, (ofGetWindowHeight() / 2)+ Constants::TXTBOX);
+	Scene1.Dialogue.drawSprite(true);
 	ofPopMatrix;
 
 	Scene1.draw_text();

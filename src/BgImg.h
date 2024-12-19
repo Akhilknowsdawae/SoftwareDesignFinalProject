@@ -6,6 +6,9 @@ class BgImg
 public:
 	ofImage BackgroundSprite;
 
+	//True to draw, false to hide. 
+	void drawSprite(bool visibility);
+
 
 };
 

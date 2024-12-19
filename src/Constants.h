@@ -17,4 +17,7 @@ namespace Constants
 	static const std::string BACKGROUND = "BACKGROUND.png";
 	static const std::string TEXTBOX = "TEXTBOX.png";
 
+	static const int DRAWLEFT = 1;
+	static const int DRAWMID = 2;
+	static const int DRAWRIGHT = 3;
 }
