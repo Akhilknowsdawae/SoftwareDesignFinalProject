@@ -9,15 +9,23 @@
 class Scene
 {
 public:
+    //Background image. Should only be one.
 	BgImg Background;
-	TalkSprite SpriteLeft;
-	TalkSprite SpriteRight;
-	TextBox Dialogue;
-	ofImage CentrePoint;
-    SoundPlay SoundplayerExample;
 
-	float ScreenCentreX = 480;
-	float ScreenCentreY = 320;
+    //Talk sprites! SpriteLeft and SpriteRight are examples. 
+    //You can have up to 3 of these showing in one scene.
+	TalkSprite SpriteLeft, SpriteRight;
+
+    //Dialogue box background sprite. 
+    //Should only have one, and displays in front of the characters.
+	TextBox Dialogue;
+
+    //Just a simple box sprite you can use to measure screen centre. 
+	ofImage CentrePoint;
+
+    //Stores sound effects to be played! 
+    //By default, stores one background track, one text appearing sound, an one example effect.
+    SoundPlay SoundplayerExample;
 
     // Position for dialogue text
     int dialogueX, dialogueY, dialogueWidth;
