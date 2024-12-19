@@ -6,7 +6,6 @@ Scene::Scene()
 
 // Initialize default values
 void Scene::setup() {
-    // Initialize text state
     fullText = "";
     currentText = "";
     currentIndex = 0;
@@ -28,7 +27,7 @@ void Scene::display_dialogue(const string& text, float speed) {
 // Update the typewriter animation
 void Scene::update() {
     if (isDisplayingText && currentIndex < fullText.length()) {
-        fadeTimer += ofGetLastFrameTime() * fadeSpeed; // Increment timer
+        fadeTimer += ofGetLastFrameTime() * fadeSpeed; 
         if (fadeTimer >= 1.0f) {
             currentIndex++; // Reveal the next character
             fadeTimer = 0.0f; // Reset the timer
@@ -43,11 +42,12 @@ void Scene::update() {
 
 // Draw the text in the existing text box
 void Scene::draw_text() {
-    ofSetColor(255); // Set text color to white
-
     // Set position and width to align within the textbox
-    float textX = ofGetWindowWidth() / 2 - 180; // Centered relative to the textbox
+    float textX = ofGetWindowWidth() / 2; // Centered relative to the textbox
     float textY = (ofGetWindowHeight() / 2) + Constants::TXTBOX - 20;
 
-    ofDrawBitmapString(currentText, textX, textY); // Render current text
+    // Render the text over the backdrop
+    ofSetColor(0); // White color
+    ofDrawBitmapString(currentText, textX, textY);
+    ofSetColor(255);
 }

@@ -47,7 +47,7 @@ void ofApp::draw(){
 	Scene1.Dialogue.Box.draw(ofGetWindowWidth() / 2, (ofGetWindowHeight() / 2)+ Constants::TXTBOX);
 	ofPopMatrix;
 
-	Scene1.display_dialogue("This is a sample dialogue message.", 5.0f);
+	Scene1.draw_text();
 }
 
 //--------------------------------------------------------------
