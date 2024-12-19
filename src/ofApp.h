@@ -7,7 +7,6 @@
 #include "TalkSprite.h"
 #include "Constants.h"
 
-
 class ofApp : public ofBaseApp{
 
 	public:
@@ -29,4 +28,12 @@ class ofApp : public ofBaseApp{
 		
 		Scene Scene1;
 
+
+private:
+	string textToShow;  // Full text to display
+	string currentText; // Text currently shown on screen (typewriter effect)
+	int currentIndex;   // Index of the next character to display
+	float fadeSpeed;    // Speed of the fade-in effect
+	float fadeTimer;    // Timer for the fade-in effect
+	int alpha;          // Transparency for the text
 };
