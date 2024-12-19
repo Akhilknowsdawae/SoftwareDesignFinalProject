@@ -3,6 +3,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	Scene1.setup();
+
 	Scene1.Background.BackgroundSprite.load(Constants::BACKGROUND);
 	Scene1.Dialogue.Box.load(Constants::TEXTBOX);
 	Scene1.SpriteLeft.Sprite.load("TalkSpriteTemplate.png");
