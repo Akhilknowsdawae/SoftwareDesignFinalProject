@@ -15,8 +15,8 @@ void ofApp::setup(){
 	
 	Scene2.Background.BackgroundSprite.load("BACKGROUND_2.png");
 	Scene2.Dialogue.Box.load("TEXTBOX_2.png");
-	Scene2.SpriteLeft.Sprite.load("TalkSpriteTemplate_2.png");
-	Scene2.SpriteRight.Sprite.load("TalkSpriteTemplate.png");
+	Scene2.SpriteLeft.Sprite.load("TalkSpriteTemplate.png");
+	Scene2.SpriteRight.Sprite.load("TalkSpriteTemplate_2.png");
 	Scene2.CentrePoint.load("CENTREPOINT.png");
 	Scene2.SoundplayerExample.BGTrack.load("BGMUSIC.mp3");
 	Scene2.SoundplayerExample.ExampleSFX.load("MOUSECLICK.mp3");
@@ -27,12 +27,17 @@ void ofApp::setup(){
 	currentScene = 1;
 
 	// Setup dialogues for Scene 1
-	Scene1.dialogueManager.say("Cha maganera");
-	Scene1.dialogueManager.say("Track them to the end");
+	Scene1.dialogueManager.say("Welcome to the game! Hit enter to move to the next bit of example dialogue!");
+	Scene1.dialogueManager.say(" This is the first scene of 2 in this example.");
+	Scene1.dialogueManager.say("You can have as many as you like!");
+	Scene1.dialogueManager.say("Now lets go to the next scene.");
 
 	// Setup dialogues for Scene 2
 	Scene2.dialogueManager.say("Welcome to Scene 2!");
-	Scene2.dialogueManager.say("Here’s another example dialogue.");
+	Scene2.dialogueManager.say("Here’s another example dialogue. This time I have a friend!");
+	Scene2.dialogueManager.say("Music and sound effects can be triggered between scenes!");
+	Scene2.dialogueManager.say("That's why the music can continue!");
+	Scene2.dialogueManager.say("Well, thats the end of the example. Happy coding!");
 	
 	Scene1.SoundplayerExample.BGTrack.play();
 
@@ -44,9 +49,6 @@ void ofApp::update(){
 	if (currentScene == 1) {
 		Scene1.update();
 
-		if (!Scene1.dialogueManager.isDisplayingText && Scene1.dialogueManager.dialogues.empty()) {
-			currentScene = 2; // Move to Scene 2 after all Scene 1 dialogues finish
-		}
 	}
 	else if (currentScene == 2) {
 		Scene2.update();
@@ -59,19 +61,21 @@ void ofApp::draw(){
 
 	// Draw the current scene
 	if (currentScene == 1) {
-		Scene1.draw();
 		Scene1.CentrePoint.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
 		Renderer.drawSprite(Scene1.Background.BackgroundSprite, true);
 		Renderer.drawSprite(Scene1.SpriteMiddle.Sprite, Scene1.SpriteLeft.visible, 2);
 		Renderer.drawSprite(Scene1.Dialogue.Box, true, 4);
+		Scene1.draw();
+
 	}
 	else if (currentScene == 2) {
-		Scene2.draw();
 		Scene2.CentrePoint.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
 		Renderer.drawSprite(Scene2.Background.BackgroundSprite, true);
 		Renderer.drawSprite(Scene2.SpriteLeft.Sprite, Scene1.SpriteLeft.visible, 1);
 		Renderer.drawSprite(Scene2.SpriteRight.Sprite, Scene1.SpriteRight.visible, 3);
 		Renderer.drawSprite(Scene2.Dialogue.Box, true, 4);
+		Scene2.draw();
+
 	}
 }
 
@@ -79,10 +83,18 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
 	// Let the current scene handle dialogue progression
 	if (currentScene == 1) {
+		if (!Scene1.dialogueManager.isDisplayingText && Scene1.dialogueManager.dialogues.empty()) {
+			currentScene = 2; // Move to Scene 2 after all Scene 1 dialogues finish
+			Scene2.SoundplayerExample.ExampleSFX.play();
+		}
 		Scene1.dialogueManager.onKeyPressed(key);
+		Scene1.SoundplayerExample.TextSFX.play();
+
 	}
 	else if (currentScene == 2) {
 		Scene2.dialogueManager.onKeyPressed(key);
+		Scene1.SoundplayerExample.TextSFX.play();
+
 	}
 }
 

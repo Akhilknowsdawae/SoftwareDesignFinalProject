@@ -13,6 +13,7 @@ namespace Constants
 	static const int SCRIGHT = 340;
 
 	static const int TXTBOX = 190;
+	static const int TXTOFFSET = 190;
 
 	static const std::string BACKGROUND = "BACKGROUND.png";
 	static const std::string TEXTBOX = "TEXTBOX.png";

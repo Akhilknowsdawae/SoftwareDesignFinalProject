@@ -16,5 +16,7 @@ void Scene::update() {
 
 void Scene::draw() {
     // Draw dialogue for this scene
-    dialogueManager.draw(100, 100, ofGetWidth() - 200); // Example position
+    ofSetColor(0);//Sets text black
+    dialogueManager.draw((ofGetWindowWidth() / 2) - 300, (ofGetWindowHeight() / 2) + Constants::TXTBOX, ofGetWidth() - 200); // Example position
+    ofSetColor(255);//Resets colour for rest of the scene elements
 }
