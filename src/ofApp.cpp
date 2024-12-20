@@ -7,12 +7,20 @@ void ofApp::setup(){
 
 	Scene1.Background.BackgroundSprite.load(Constants::BACKGROUND);
 	Scene1.Dialogue.Box.load(Constants::TEXTBOX);
-	Scene1.SpriteLeft.Sprite.load("TalkSpriteTemplate.png");
-	Scene1.SpriteRight.Sprite.load("TalkSpriteTemplate.png");
+	Scene1.SpriteMiddle.Sprite.load("TalkSpriteTemplate.png");
 	Scene1.CentrePoint.load("CENTREPOINT.png");
 	Scene1.SoundplayerExample.BGTrack.load("BGMUSIC.mp3");
 	Scene1.SoundplayerExample.ExampleSFX.load("MOUSECLICK.mp3");
-	Scene1.SoundplayerExample.TextSFX.load("TEXTSFX.mp3");
+	Scene1.SoundplayerExample.TextSFX.load("TEXTSFX.mp3");	
+	
+	Scene2.Background.BackgroundSprite.load("BACKGROUND_2.png");
+	Scene2.Dialogue.Box.load("TEXTBOX_2.png");
+	Scene2.SpriteLeft.Sprite.load("TalkSpriteTemplate_2.png");
+	Scene2.SpriteRight.Sprite.load("TalkSpriteTemplate.png");
+	Scene2.CentrePoint.load("CENTREPOINT.png");
+	Scene2.SoundplayerExample.BGTrack.load("BGMUSIC.mp3");
+	Scene2.SoundplayerExample.ExampleSFX.load("MOUSECLICK.mp3");
+	Scene2.SoundplayerExample.TextSFX.load("TEXTSFX.mp3");
 	ofSetRectMode(OF_RECTMODE_CENTER);
 
 	// Initialize current scene
@@ -49,28 +57,21 @@ void ofApp::update(){
 void ofApp::draw(){
 	ofBackground(0);
 
-	ofPushMatrix;
-	Scene1.CentrePoint.draw(ofGetWindowWidth()/2, ofGetWindowHeight()/2);
-	ofPopMatrix;
-	ofPushMatrix;
-	Renderer.drawSprite(Scene1.Background.BackgroundSprite, true);
-	ofPopMatrix;
-	ofPushMatrix;
-	Renderer.drawSprite(Scene1.SpriteLeft.Sprite, true, 1);
-	ofPopMatrix;
-	ofPushMatrix;
-	Renderer.drawSprite(Scene1.SpriteRight.Sprite, true, 3);
-	ofPopMatrix;
-	ofPushMatrix;
-	Renderer.drawSprite(Scene1.Dialogue.Box, true, 4);
-	ofPopMatrix;
-
 	// Draw the current scene
 	if (currentScene == 1) {
 		Scene1.draw();
+		Scene1.CentrePoint.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
+		Renderer.drawSprite(Scene1.Background.BackgroundSprite, true);
+		Renderer.drawSprite(Scene1.SpriteMiddle.Sprite, Scene1.SpriteLeft.visible, 2);
+		Renderer.drawSprite(Scene1.Dialogue.Box, true, 4);
 	}
 	else if (currentScene == 2) {
 		Scene2.draw();
+		Scene2.CentrePoint.draw(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
+		Renderer.drawSprite(Scene2.Background.BackgroundSprite, true);
+		Renderer.drawSprite(Scene2.SpriteLeft.Sprite, Scene1.SpriteLeft.visible, 1);
+		Renderer.drawSprite(Scene2.SpriteRight.Sprite, Scene1.SpriteRight.visible, 3);
+		Renderer.drawSprite(Scene2.Dialogue.Box, true, 4);
 	}
 }
 

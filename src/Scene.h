@@ -13,9 +13,9 @@ public:
     //Background image. Should only be one.
 	BgImg Background;
 
-    //Talk sprites! SpriteLeft and SpriteRight are examples. 
+    //Talk sprites! these are examples. 
     //You can have up to 3 of these showing in one scene.
-	TalkSprite SpriteLeft, SpriteRight;
+	TalkSprite SpriteMiddle, SpriteLeft, SpriteRight;
 
     //Dialogue box background sprite. 
     //Should only have one, and displays in front of the characters.
