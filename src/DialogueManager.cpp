@@ -38,7 +38,7 @@ void DialogueManager::update() {
 
 void DialogueManager::draw(int x, int y, int maxWidth) {
     // Set text color and draw current dialogue
-    ofSetColor(0); // Black color
+    //ofSetColor(0); // Black color
     ofDrawBitmapString(currentText, x, y);
 
     //Add text-wrapping logic if needed

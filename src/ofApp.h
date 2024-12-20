@@ -30,6 +30,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Scene Scene1;
+		Scene Scene2;
 		Render Renderer;
-		DialogueManager dialogueManager;
+		int currentScene;
 };

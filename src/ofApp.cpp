@@ -15,8 +15,16 @@ void ofApp::setup(){
 	Scene1.SoundplayerExample.TextSFX.load("TEXTSFX.mp3");
 	ofSetRectMode(OF_RECTMODE_CENTER);
 
-	// Set the initial dialogue
-	Scene1.display_dialogue("Welcome to the visual novel! Press Enter to continue.", 5.0f);
+	// Initialize current scene
+	currentScene = 1;
+
+	// Setup dialogues for Scene 1
+	Scene1.dialogueManager.say("Cha maganera");
+	Scene1.dialogueManager.say("Track them to the end");
+
+	// Setup dialogues for Scene 2
+	Scene2.dialogueManager.say("Welcome to Scene 2!");
+	Scene2.dialogueManager.say("Here’s another example dialogue.");
 	
 	Scene1.SoundplayerExample.BGTrack.play();
 
@@ -24,7 +32,18 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	
+	// Update dialogues based on the current scene
+	if (currentScene == 1) {
+		Scene1.update();
+
+		// Example condition to move to Scene 2
+		if (!Scene1.dialogueManager.isDisplayingText && !Scene1.dialogueManager.dialogues.empty()) {
+			currentScene = 2; // Hardcoded transition
+		}
+	}
+	else if (currentScene == 2) {
+		Scene2.update();
+	}
 }
 
 //--------------------------------------------------------------
@@ -46,11 +65,25 @@ void ofApp::draw(){
 	ofPushMatrix;
 	Renderer.drawSprite(Scene1.Dialogue.Box, true, 4);
 	ofPopMatrix;
+
+	// Draw the current scene
+	if (currentScene == 1) {
+		Scene1.draw();
+	}
+	else if (currentScene == 2) {
+		Scene2.draw();
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	// Let the current scene handle dialogue progression
+	if (currentScene == 1) {
+		Scene1.dialogueManager.onKeyPressed(key);
+	}
+	else if (currentScene == 2) {
+		Scene2.dialogueManager.onKeyPressed(key);
+	}
 }
 
 //--------------------------------------------------------------

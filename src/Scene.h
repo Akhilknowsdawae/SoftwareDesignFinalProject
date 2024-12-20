@@ -5,6 +5,7 @@
 #include "BgImg.h"
 #include "TalkSprite.h"
 #include "SoundPlay.h"
+#include "DialogueManager.h"
 
 class Scene
 {
@@ -27,6 +28,8 @@ public:
     //By default, stores one background track, one text appearing sound, an one example effect.
     SoundPlay SoundplayerExample;
 
+    DialogueManager dialogueManager;
+
     // Position for dialogue text
     int dialogueX, dialogueY, dialogueWidth;
 
@@ -38,11 +41,12 @@ public:
     float fadeTimer;       // Timer for character rendering
     bool isDisplayingText; // Whether text animation is active
 
-    // Methods
+    // Constructors
     Scene();
+
+    //Functions
     void setup();
-    void display_dialogue(const string& text, float speed);
     void update();
-    void draw_text();
+    void draw();
 };
 
