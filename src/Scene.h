@@ -30,17 +30,6 @@ public:
 
     DialogueManager dialogueManager;
 
-    // Position for dialogue text
-    int dialogueX, dialogueY, dialogueWidth;
-
-    // State variables for dialogue text
-    string fullText;       // Full text to display
-    string currentText;    // Text currently being displayed
-    int currentIndex;      // Index of the next character to display
-    float fadeSpeed;       // Speed for typewriter fade-in
-    float fadeTimer;       // Timer for character rendering
-    bool isDisplayingText; // Whether text animation is active
-
     // Constructors
     Scene();
 

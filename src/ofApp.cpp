@@ -36,9 +36,8 @@ void ofApp::update(){
 	if (currentScene == 1) {
 		Scene1.update();
 
-		// Example condition to move to Scene 2
-		if (!Scene1.dialogueManager.isDisplayingText && !Scene1.dialogueManager.dialogues.empty()) {
-			currentScene = 2; // Hardcoded transition
+		if (!Scene1.dialogueManager.isDisplayingText && Scene1.dialogueManager.dialogues.empty()) {
+			currentScene = 2; // Move to Scene 2 after all Scene 1 dialogues finish
 		}
 	}
 	else if (currentScene == 2) {
